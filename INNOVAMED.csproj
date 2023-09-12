@@ -106,10 +106,15 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Imagenes\Calendario.jpg" />
+    <Content Include="Imagenes\cell.png" />
     <Content Include="Imagenes\Especialidades.jpg" />
+    <Content Include="Imagenes\hubicacion.png" />
+    <Content Include="Imagenes\iconinfo.png" />
     <Content Include="Imagenes\icono1.jpg" />
     <Content Include="Imagenes\icono1.png" />
     <Content Include="Imagenes\logo.png" />
+    <Content Include="Imagenes\logoInnovamed.jpg" />
+    <Content Include="Imagenes\mail.png" />
     <Content Include="Imagenes\Nosotros.jpg" />
     <Content Include="Imagenes\Pediatria.jpg" />
     <Content Include="Imagenes\pp.jpg" />
