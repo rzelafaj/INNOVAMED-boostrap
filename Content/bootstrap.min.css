@@ -42,8 +42,17 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.boton{
-    width: 12%;
+.texto-2 {
+    text-align: center;
+    color: #107c98;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.texto-3 {
+    text-align: center;
+    color: #56c3c1;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .testo-1{
@@ -80,3 +89,4 @@
        text-align: right;
       
    }
+

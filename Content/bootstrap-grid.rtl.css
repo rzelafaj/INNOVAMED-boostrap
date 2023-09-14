@@ -73,7 +73,8 @@
 }
 
 .col {
-  flex: 1 0 0%;
+  flex: 75%;
+  align-items:center;
 }
 
 .row-cols-auto > * {
