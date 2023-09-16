@@ -28,10 +28,10 @@
                 <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Especialidades</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Registrarse</button>
+                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">@Html.ActionLink("Registrarse", "RegistrarPaciente", "Registro", new { area = "" }, new { @class = "navbar-brand" })</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Inicio de sesion</button>
+                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">@Html.ActionLink("Inicio sesión", "Login", "Login", new { area = "" }, new { @class = "navbar-brand" })</button>
             </li>
         </ul>
     </div>
