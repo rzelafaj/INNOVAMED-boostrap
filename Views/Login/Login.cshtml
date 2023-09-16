@@ -1,0 +1,100 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link type="text/css" href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <!--barra de navegacion de menu-->
+    <div>
+        <ul class="nav nav-pills nav-fill gap-2 p-1 small color-Interno rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+            <li class="nav-item" role="presentation">
+                <!--se cambio logo de innovamed-->
+                <img src="~/Imagenes/logoInnovamed.jpg" width="110">
+
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Medicina General</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Especialidades</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Registrarse</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Inicio de sesion</button>
+            </li>
+        </ul>
+    </div>
+
+    <!--Formulario Login-->
+    <div class="container">
+        <img src="~/Imagenes/logo.png" width="200">
+    </div>
+    <div>
+        <form class="container">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <!--div id="emailHelp" class="form-text">We'll never share your email with anyone else.</!--div>-->
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    
+
+    <!--Barra de informacion infe-->
+    <!-------------------------------->
+    <div class="container-fluid  color-Interno ">
+        <!--modificando div general-->
+        <div class=" row py-3 align-text-top text-black text-center">
+            <!-- midificando texto-->
+            <nav class="navbar">
+                <div class="col-md-4">
+                    <!-- aliniacion de iconos-->
+                    <div>
+                        <a href="#"> <img src="~/Imagenes/cell.png" width="40" /></a>
+                    </div>
+                    <samp><b>Teléfono <br />(503)9820-3928</b></samp>
+                </div>
+                <!-- -->
+                <div class="col-md-4">
+                    <!-- aliniacion de iconos-->
+                    <div>
+                        <a href="#"> <img src="~/Imagenes/mail.png" width="40" /></a>
+                    </div>
+                    <samp><b>Correo <br />example@mail.com</b></samp>
+                </div>
+                <!-- -->
+                <div class="col-md-4">
+                    <!-- aliniacion de iconos-->
+                    <div>
+                        <a href="#"> <img src="~/Imagenes/ubi.png" width="40" /></a>
+                    </div>
+                    <samp><b>El Salvador <br />San salvador</b></samp>
+                </div>
+                <!-- -->
+            </nav>
+        </div>
+    </div>
+
+
+</body>
+</html>
