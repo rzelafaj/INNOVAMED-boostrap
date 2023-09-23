@@ -15,16 +15,16 @@
 <body>
     <!--barra de navegacion de menu-->
     <div>
-        <ul class="nav nav-pills nav-fill gap-2 p-1 small shadow-sm" id="pillNav2" role="tablist" style="background-color: #C4F9F8; --bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+        <ul class="nav nav-pills nav-fill gap-2 p-1 small shadow-sm" id="pillNav2" role="tablist" style="background-color: #C4F9F8; --bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary);">
             <li class="nav-item" role="presentation">
                 <!--se cambio logo de innovamed-->
                 <img src="~/Imagenes/logoInnovamed.jpg" width="110">
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false"> @Html.ActionLink("INICIO", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</button>
+                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false"> @Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Medicina General</button>
+                <button class="nav-link rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Medicina General</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Especialidades</button>
@@ -126,7 +126,7 @@
                     <input type="password" class="form-control" placeholder="Contraseña*" name="contraseña" onclick="viewPassword()">
                 </div>
                 <div class="col-md-4">
-                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">TCONFIRMACION DE CONTRASEÑA</label>
+                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">CONFIRMACION DE CONTRASEÑA</label>
                     <input type="password" class="form-control" placeholder="Confirmar su contraseña*" name="Confirmacion de contraseña">
                 </div>
             </div>
@@ -134,60 +134,60 @@
 
             <!--en caso de emergencia llamar a -->
             <div class="row">
-            <div class="col-md-6">
-                <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">NOMBRE DE LA PERSONA RESPONSABLE</label>
-                <input type="text" class="form-control" placeholder="En caso de emergencia llamar a*" name="nombres">
+                <div class="col-md-6">
+                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">NOMBRE DE LA PERSONA RESPONSABLE</label>
+                    <input type="text" class="form-control" placeholder="En caso de emergencia llamar a*" name="nombres">
+                </div>
+                <div class="col-md-3">
+                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">TELEFONO</label>
+                    <input type="text" class="form-control" placeholder="Telefono*" name="apellidos">
+                </div>
             </div>
-            <div class="col-md-3">
-                <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">TELEFONO</label>
-                <input type="text" class="form-control" placeholder="Telefono*" name="apellidos">
+            <br />
+
+            <!--CheckBox -->
+            <div class="row">
+                <div class="col text-white">
+                    <asp:Label runat="server" Text="Label" style="margin-left:10px">Sexo*</asp:Label>
+                    <input type="radio" class="form-check-input" style="margin-left:40px" id="femenino" name="optradio" value="Femenino">
+                    <label class="form-check-label" for="radio2">Femenino</label>
+                    <input type="radio" class="form-check-input" style="margin-left:40px" id="masculino" name="optradio" value="Masculino">
+                    <label class="form-check-label" for="radio2">Masculino</label>
+                </div>
             </div>
-    </div>
-    <br />
+            <hr />
+            <div class="row text-white">
+                <div class="col">
+                    <asp:Label runat="server" Text="Label" style="margin-left:10px">¿Consumes medicamentos de tipo recurrentes?</asp:Label>
+                    <input type="radio" class="form-check-input" style="margin-left:40px" id="medSi" name="optradio1" value="true">
+                    <label class="form-check-label" for="radio2">SI</label>
+                    <input type="radio" class="form-check-input" style="margin-left:40px" id="medNo" name="optradio1" value="false">
+                    <label class="form-check-label" for="radio2">NO</label>
+                </div>
+            </div>
+            <hr />
+            <div class="row text-white">
+                <div class="col">
+                    <asp:Label runat="server" Text="Label" style="margin-left:10px">¿Padeces alguna enfermedad cronica?</asp:Label>
+                    <input type="radio" class="form-check-input" style="margin-left:105px" id="enfSi" name="optradio2" value="true">
+                    <label class="form-check-label" for="radio2">SI</label>
+                    <input type="radio" class="form-check-input" style="margin-left:40px" id="enfNo" name="optradio2" value="false">
+                    <label class="form-check-label" for="radio2">NO</label>
+                </div>
 
-    <!--CheckBox -->
-    <div class="row">
-        <div class="col text-white">
-            <asp:Label runat="server" Text="Label" style="margin-left:10px">Sexo*</asp:Label>
-            <input type="radio" class="form-check-input" style="margin-left:40px" id="femenino" name="optradio" value="Femenino">
-            <label class="form-check-label" for="radio2">Femenino</label>
-            <input type="radio" class="form-check-input" style="margin-left:40px" id="masculino" name="optradio" value="Masculino">
-            <label class="form-check-label" for="radio2">Masculino</label>
-        </div>
-    </div>
-    <hr />
-    <div class="row text-white">
-        <div class="col">
-            <asp:Label runat="server" Text="Label" style="margin-left:10px">¿Consumes medicamentos de tipo recurrentes?</asp:Label>
-            <input type="radio" class="form-check-input" style="margin-left:40px" id="medSi" name="optradio1" value="true">
-            <label class="form-check-label" for="radio2">SI</label>
-            <input type="radio" class="form-check-input" style="margin-left:40px" id="medNo" name="optradio1" value="false">
-            <label class="form-check-label" for="radio2">NO</label>
-        </div>
-    </div>
-    <hr />
-    <div class="row text-white">
-        <div class="col">
-            <asp:Label runat="server" Text="Label" style="margin-left:10px">¿Padeces alguna enfermedad cronica?</asp:Label>
-            <input type="radio" class="form-check-input" style="margin-left:105px" id="enfSi" name="optradio2" value="true">
-            <label class="form-check-label" for="radio2">SI</label>
-            <input type="radio" class="form-check-input" style="margin-left:40px" id="enfNo" name="optradio2" value="false">
-            <label class="form-check-label" for="radio2">NO</label>
-        </div>
-
-    </div>
-    <br /><br />
-    <!--Botones de guardar y limpiar-->
-    <div class="row">
-        <div class="col">
-            <button type="submit" class="btn btn-primary">Limpiar informacion</button>
-        </div>
-        <div class="col">
-            <button type="submit" class="btn btn-primary">Guardar datos</button>
-        </div>
-    </div>
-    </form>
-    <br />
+            </div>
+            <br /><br />
+            <!--Botones de guardar y limpiar-->
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">Limpiar informacion</button>
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">Guardar datos</button>
+                </div>
+            </div>
+        </form>
+        <br />
 
     </div>
     <br />
@@ -195,6 +195,7 @@
     <br />
 
     <!--Barra de informacion infe-->
+    <!-------------------------------->
     <!-------------------------------->
     <div class="container-fluid" style="background-color: #0093B9; color: #0093B9; ">
         <!--modificando div general-->
@@ -204,7 +205,7 @@
                 <div class="col-md-4">
                     <!-- aliniacion de iconos-->
                     <div>
-                        <a href="#"> <img src="~/Imagenes/cel.png" width="30" /></a>
+                        <a href="#"> <img src="~/Imagenes/icons8-mensaje-de-telefono-50.png" width="30" /></a>
                     </div>
                     <samp>Teléfono <br />(503)0000-0000</samp>
                 </div>
@@ -212,7 +213,7 @@
                 <div class="col-md-4">
                     <!-- aliniacion de iconos-->
                     <div>
-                        <a href="#"> <img src="~/Imagenes/correo.png" width="30" /></a>
+                        <a href="#"> <img src="~/Imagenes/icons8-correo-24.png" width="30" /></a>
                     </div>
                     <samp>Correo <br />example@mail.com</samp>
                 </div>
@@ -220,7 +221,7 @@
                 <div class="col-md-4">
                     <!-- aliniacion de iconos-->
                     <div>
-                        <a href="#"> <img src="~/Imagenes/ubi.png" width="30" /></a>
+                        <a href="#"> <img src="~/Imagenes/icons8-maps-48.png" width="30" /></a>
                     </div>
                     <samp>El Salvador <br />San salvador</samp>
                 </div>
