@@ -8,18 +8,20 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>INNOVAMED</title>
+    <title></title>
     <link type="text/css" href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
 </head>
 <body>
     <!--barra de navegacion de menu-->
     <div>
-        <ul class="nav nav-pills nav-fill gap-2 p-1 small color-Interno rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+        <ul class="nav nav-pills nav-fill gap-2 p-1 small shadow-sm" id="pillNav2" role="tablist" style="background-color: #C4F9F8; --bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
             <li class="nav-item" role="presentation">
                 <!--se cambio logo de innovamed-->
                 <img src="~/Imagenes/logoInnovamed.jpg" width="110">
-
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false"> @Html.ActionLink("INICIO", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Medicina General</button>
@@ -28,13 +30,30 @@
                 <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Especialidades</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Registrarse</button>
+                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">@Html.ActionLink("Registrarse", "RegistrarPaciente", "Registro", new { area = "" }, new { @class = "navbar-brand" })</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">inicio de sesion</button>
+                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false"> @Html.ActionLink("Inicio de sesion", "Login", "Login", new { area = "" }, new { @class = "navbar-brand" })</button>
             </li>
         </ul>
+    </div><br /><br />
+
+    <!-- Carousel -->
+    <div class="col-md-12">
+        <div class="contenedor">
+            <div id="demo" class="carousel slide " data-bs-ride="carousel">
+
+                <!-- imagenes del carousel -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="~/Imagenes/Registrate.jpg" class="d-block w-100">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <br />
+    <br />
 
     <!--nuevo ingreso-->
     <br />
@@ -47,114 +66,163 @@
     <br />
 
     <!--cajas de texto-->
-    <div class="container mt-3">
+    <div class="container-lg  mt-4" style="background: #0093B9;">
+        <br />
         <form class="texto-3">
+            <!--campos para ingreso de nombres-->
             <div class="row">
-                <div class="col">
+                <div class="col-md-6">
+                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">NOMBRE DEL PACIENTE</label>
                     <input type="text" class="form-control" placeholder="Nombres*" name="nombres">
                 </div>
-                <div class="col">
+                <div class="col-md-6">
+                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">APELLIDO DEL PACIENTE</label>
                     <input type="text" class="form-control" placeholder="Apellidos*" name="apellidos">
                 </div>
             </div>
             <br />
+
+            <!--campo de ingreso de direccion-->
             <div class="row">
-                <div class="col">
+                <div class="col-md-10">
+                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">DIRECCION</label>
+                    <input type="text" class="form-control" placeholder="Direccion segun Dui*" name="direccion">
+                </div>
+            </div>
+            <br />
+
+            <!--campos de ingreso de correo y teleono-->
+            <div class="row">
+                <div class="col-md-6">
+                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">CORREO ELECTRONICO</label>
                     <input type="text" class="form-control" placeholder="Correo electronico*" name="email">
                 </div>
-                <div class="col">
+                <div class="col-md-3">
+                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">TELEFONO</label>
                     <input type="text" class="form-control" placeholder="Telefono*" name="telefono">
                 </div>
             </div>
             <br />
+
+            <!--campos de ingreso de documento de identidad y fecha de nacimiento-->
             <div class="row">
-                <div class="col">
+                <div class="col-md-3">
+                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">DUI</label>
                     <input type="text" class="form-control" placeholder="DUI*" name="dui">
                 </div>
                 <div class="col">
-                    <div class="col">
+                    <div class="col-md-3">
+                        <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">FECHA DE NACIMIENTO</label>
                         <input type="date" class="form-control" placeholder="Fecha de nacimiento*" name="Fecha de nacimiento">
                     </div>
                 </div>
             </div>
             <br />
-            <!--CheckBox -->
+
+            <!--campos de ingreso de correo y teleono-->
             <div class="row">
-                <div class="col">
-                    <asp:Label runat="server" Text="Label" style="margin-left:10px">Sexo*</asp:Label>
-                    <input type="radio" class="form-check-input" style="margin-left:40px" id="femenino" name="optradio" value="Femenino">
-                    <label class="form-check-label" for="radio2">Femenino</label>
-                    <input type="radio" class="form-check-input" style="margin-left:40px" id="masculino" name="optradio" value="Masculino">
-                    <label class="form-check-label" for="radio2">Masculino</label>
+                <div class="col-md-4">
+                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">CONTRASEÑA</label>
+                    <input type="password" class="form-control" placeholder="Contraseña*" name="contraseña" onclick="viewPassword()">
+                </div>
+                <div class="col-md-4">
+                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">TCONFIRMACION DE CONTRASEÑA</label>
+                    <input type="password" class="form-control" placeholder="Confirmar su contraseña*" name="Confirmacion de contraseña">
                 </div>
             </div>
-            <hr />
+            <br />
+
+            <!--en caso de emergencia llamar a -->
             <div class="row">
-                <div class="col">
-                    <asp:Label runat="server" Text="Label" style="margin-left:10px">¿Consumes medicamentos de tipo recurrentes?</asp:Label>
-                    <input type="radio" class="form-check-input" style="margin-left:40px" id="medSi" name="optradio1" value="true">
-                    <label class="form-check-label" for="radio2">SI</label>
-                    <input type="radio" class="form-check-input" style="margin-left:40px" id="medNo" name="optradio1" value="false">
-                    <label class="form-check-label" for="radio2">NO</label>
-                </div>
+            <div class="col-md-6">
+                <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">NOMBRE DE LA PERSONA RESPONSABLE</label>
+                <input type="text" class="form-control" placeholder="En caso de emergencia llamar a*" name="nombres">
             </div>
-            <hr />
-            <div class="row">
-                <div class="col">
-                    <asp:Label runat="server" Text="Label" style="margin-left:10px">¿Padeces alguna enfermedad cronica?</asp:Label>
-                    <input type="radio" class="form-check-input" style="margin-left:105px" id="enfSi" name="optradio2" value="true">
-                    <label class="form-check-label" for="radio2">SI</label>
-                    <input type="radio" class="form-check-input" style="margin-left:40px" id="enfNo" name="optradio2" value="false">
-                    <label class="form-check-label" for="radio2">NO</label>
-                </div>
+            <div class="col-md-3">
+                <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">TELEFONO</label>
+                <input type="text" class="form-control" placeholder="Telefono*" name="apellidos">
             </div>
-            <br /><br />
-            <!--Botones de guardar y limpiar-->
-            <div class="row">
-                <div class="col">
-                    <button type="submit" class="btn btn-primary">Limpiar informacion</button>
-                </div>
-                <div class="col">
-                    <button type="submit" class="btn btn-primary">Guardar datos</button>
-                </div>
-            </div>
-        </form>
-        <br />
+    </div>
+    <br />
+
+    <!--CheckBox -->
+    <div class="row">
+        <div class="col text-white">
+            <asp:Label runat="server" Text="Label" style="margin-left:10px">Sexo*</asp:Label>
+            <input type="radio" class="form-check-input" style="margin-left:40px" id="femenino" name="optradio" value="Femenino">
+            <label class="form-check-label" for="radio2">Femenino</label>
+            <input type="radio" class="form-check-input" style="margin-left:40px" id="masculino" name="optradio" value="Masculino">
+            <label class="form-check-label" for="radio2">Masculino</label>
+        </div>
+    </div>
+    <hr />
+    <div class="row text-white">
+        <div class="col">
+            <asp:Label runat="server" Text="Label" style="margin-left:10px">¿Consumes medicamentos de tipo recurrentes?</asp:Label>
+            <input type="radio" class="form-check-input" style="margin-left:40px" id="medSi" name="optradio1" value="true">
+            <label class="form-check-label" for="radio2">SI</label>
+            <input type="radio" class="form-check-input" style="margin-left:40px" id="medNo" name="optradio1" value="false">
+            <label class="form-check-label" for="radio2">NO</label>
+        </div>
+    </div>
+    <hr />
+    <div class="row text-white">
+        <div class="col">
+            <asp:Label runat="server" Text="Label" style="margin-left:10px">¿Padeces alguna enfermedad cronica?</asp:Label>
+            <input type="radio" class="form-check-input" style="margin-left:105px" id="enfSi" name="optradio2" value="true">
+            <label class="form-check-label" for="radio2">SI</label>
+            <input type="radio" class="form-check-input" style="margin-left:40px" id="enfNo" name="optradio2" value="false">
+            <label class="form-check-label" for="radio2">NO</label>
+        </div>
+
+    </div>
+    <br /><br />
+    <!--Botones de guardar y limpiar-->
+    <div class="row">
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Limpiar informacion</button>
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Guardar datos</button>
+        </div>
+    </div>
+    </form>
+    <br />
 
     </div>
     <br />
     <br />
     <br />
 
-    <!--Comensar a condificar Info-bar -->
+    <!--Barra de informacion infe-->
     <!-------------------------------->
-    <div class="container-fluid  color-Interno ">
+    <div class="container-fluid" style="background-color: #0093B9; color: #0093B9; ">
         <!--modificando div general-->
-        <div class=" row py-3 align-text-top text-black text-center">
+        <div class=" row py-3 align-text-top text-white text-center">
             <!-- midificando texto-->
             <nav class="navbar">
                 <div class="col-md-4">
                     <!-- aliniacion de iconos-->
                     <div>
-                        <a href="#"> <img src="~/Imagenes/cell.png" width="40" /></a>
+                        <a href="#"> <img src="~/Imagenes/cel.png" width="30" /></a>
                     </div>
-                    <samp><b>Teléfono <br />(503)9820-3928</b></samp>
+                    <samp>Teléfono <br />(503)0000-0000</samp>
                 </div>
                 <!-- -->
                 <div class="col-md-4">
                     <!-- aliniacion de iconos-->
                     <div>
-                        <a href="#"> <img src="~/Imagenes/mail.png" width="40" /></a>
+                        <a href="#"> <img src="~/Imagenes/correo.png" width="30" /></a>
                     </div>
-                    <samp><b>Correo <br />example@mail.com</b></samp>
+                    <samp>Correo <br />example@mail.com</samp>
                 </div>
                 <!-- -->
                 <div class="col-md-4">
                     <!-- aliniacion de iconos-->
                     <div>
-                        <a href="#"> <img src="~/Imagenes/ubi.png" width="40" /></a>
+                        <a href="#"> <img src="~/Imagenes/ubi.png" width="30" /></a>
                     </div>
-                    <samp><b>El Salvador <br />San salvador</b></samp>
+                    <samp>El Salvador <br />San salvador</samp>
                 </div>
                 <!-- -->
             </nav>
