@@ -3,44 +3,72 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - INNOVAMED</title>
+    <title>@ViewBag.Title INNOVAMED</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
-  </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
-        </div>
-  
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
-        </footer>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-</body>
-</html>
+</head>
+<body>
+    <div>
+        <ul class="nav nav-pills nav-fill gap-2 p-1 small shadow-sm" id="pillNav2" role="tablist" style="background-color: #C4F9F8; --bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary);">
+            <li class="nav-item" role="presentation">
+                <img src="~/Imagenes/logoInnovamed.jpg" width="110">
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false"> @Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Medicina General</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Especialidades</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Conocenos</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">@Html.ActionLink("Registrarse", "RegistrarPaciente", "Registro", new { area = "" }, new { @class = "navbar-brand" })</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false"> @Html.ActionLink("Inicio de sesion", "Login", "Login", new { area = "" }, new { @class = "navbar-brand" })</button>
+            </li>
+        </ul>
+    </div>
+    <div>
+        @RenderBody()
+
+        <footer>
+            <div class="container-fluid" style="background-color: #0093B9; color: #0093B9; ">
+                <div class=" row py-3 align-text-top text-white text-center">
+
+                    <nav class="navbar">
+                        <div class="col-md-4">
+                            <div>
+                                <a href="#"> <img src="~/Imagenes/icons8-mensaje-de-telefono-50.png" width="30" /></a>
+                            </div>
+                            <samp>Teléfono <br />(503)0000-0000</samp>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div>
+                                <a href="#"> <img src="~/Imagenes/icons8-correo-24.png" width="30" /></a>
+                            </div>
+                            <samp>Correo <br />example@mail.com</samp>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div>
+                                <a href="#"> <img src="~/Imagenes/icons8-maps-48.png" width="30" /></a>
+                            </div>
+                            <samp>El Salvador <br />San salvador</samp>
+                        </div>
+
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    </div>
+    </body>
+    </html>

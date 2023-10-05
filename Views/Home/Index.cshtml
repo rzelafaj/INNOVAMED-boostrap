@@ -1,44 +1,7 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>INNOVAMED</title>
-    <link type="text/css" href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
-</head>
-<body>
-    <!--barra de navegacion de menu-->
-    <div>
-        <ul class="nav nav-pills nav-fill gap-2 p-1 small shadow-sm" id="pillNav2" role="tablist" style="background-color: #C4F9F8; --bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary);">
-            <li class="nav-item" role="presentation">
-                <!--se cambio logo de innovamed-->
-                <img src="~/Imagenes/logoInnovamed.jpg" width="110">
-
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Medicina General</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Especialidades</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Conocenos</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">@Html.ActionLink("Registrarse", "RegistrarPaciente", "Registro", new { area = "" }, new { @class = "navbar-brand" })</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false"> @Html.ActionLink("Inicio de sesion", "Login", "Login", new { area = "" }, new { @class = "navbar-brand" })</button>
-            </li>
-        </ul>
-    </div><br /><br />
-
 
     <!-- Carousel -->
     <div class="col-sm-12">
@@ -93,6 +56,8 @@
     <div class="testo-1 ">
         <asp:Label runat="server" Text="Label">¿Como hacer una cita?</asp:Label>
     </div>
+<br />
+<br />
 
     <!--columnas de infromacion para ayuda del cliente-->
 
@@ -120,46 +85,5 @@
             </div>
             <div class="col-md-1" style="background-color:white"></div>
         </div>
-    </div>
-    <br>
-    <br>
-    <br>
-
-
-    <!--Barra de informacion infe-->
-    <!-------------------------------->
-    <!-------------------------------->
-    <div class="container-fluid" style="background-color: #0093B9; color: #0093B9; ">
-        <!--modificando div general-->
-        <div class=" row py-3 align-text-top text-white text-center">
-            <!-- midificando texto-->
-            <nav class="navbar">
-                <div class="col-md-4">
-                    <!-- aliniacion de iconos-->
-                    <div>
-                        <a href="#"> <img src="~/Imagenes/icons8-mensaje-de-telefono-50.png" width="30" /></a>
-                    </div>
-                    <samp>Teléfono <br />(503)0000-0000</samp>
-                </div>
-                <!-- -->
-                <div class="col-md-4">
-                    <!-- aliniacion de iconos-->
-                    <div>
-                        <a href="#"> <img src="~/Imagenes/icons8-correo-24.png" width="30" /></a>
-                    </div>
-                    <samp>Correo <br />example@mail.com</samp>
-                </div>
-                <!-- -->
-                <div class="col-md-4">
-                    <!-- aliniacion de iconos-->
-                    <div>
-                        <a href="#"> <img src="~/Imagenes/icons8-maps-48.png" width="30" /></a>
-                    </div>
-                    <samp>El Salvador <br />San salvador</samp>
-                </div>
-                <!-- -->
-            </nav>
-        </div>
-    </div>
-</body>
-</html>
+    </div><br /><br />
+    
