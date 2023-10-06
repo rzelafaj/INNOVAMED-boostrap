@@ -125,6 +125,7 @@
     <Content Include="Imagenes\icons8-maps-48.png" />
     <Content Include="Imagenes\icons8-mensaje-de-telefono-50.png" />
     <Content Include="Imagenes\icons8-siguiente-48.png" />
+    <Content Include="Imagenes\lobi.jpg" />
     <Content Include="Imagenes\logo.png" />
     <Content Include="Imagenes\logoInnovamed.jpg" />
     <Content Include="Imagenes\mail.png" />
