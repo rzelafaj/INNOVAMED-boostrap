@@ -146,6 +146,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MedicinaGeneralController.cs" />
     <Compile Include="Controllers\RegistroController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -182,6 +183,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Registro\RegistrarPaciente.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\MedicinaGeneral\MedicinaGeneral.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
