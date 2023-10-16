@@ -6,6 +6,7 @@ using System.Web;
 
 namespace INNOVAMED.Models
 {
+    //variables a utilizar
     public class Pacientes
     {
        public int IdPaciente { get; set; }
