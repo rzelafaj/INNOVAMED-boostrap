@@ -10,6 +10,9 @@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap_4.1.1_js_bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery_3.2.1_jquery.min.js"></script>
+    <link href="~/Content/bootstrap_4.1.1_css_bootstrap.min.css" rel="stylesheet" />
 
 </head>
 <body style="padding:0">
@@ -22,7 +25,7 @@
                 <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false"> @Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Medicina General</button>
+                <button class="nav-link rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">@Html.ActionLink("Medicina General", "MedicinaGeneral", "MedicinaGeneral", new { area = "" }, new { @class = "navbar-brand" })</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Especialidades</button>

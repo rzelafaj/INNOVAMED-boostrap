@@ -106,4 +106,9 @@ button {
     button:hover {
         background-color: #107C98;
     }
+
+/*Diseño tarjetas*/
+.card-title{
+    color: #0093B9;
+}
     
