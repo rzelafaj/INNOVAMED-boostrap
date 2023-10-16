@@ -12,7 +12,7 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
 
 </head>
-<body style="margin:0; padding:0">
+<body style="padding:0">
     <div>
         <ul class="nav nav-pills nav-fill gap-2 p-1 small shadow-sm" id="pillNav2" role="tablist" style="background-color: #C4F9F8; --bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary);">
             <li class="nav-item" role="presentation">
@@ -34,7 +34,7 @@
                 <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">@Html.ActionLink("Registrarse", "RegistrarPaciente", "Registro", new { area = "" }, new { @class = "navbar-brand" })</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link rounded-5" href="#login" id="contact-tab2" data-toggle="modal" type="button"  role="tab" aria-selected="false"> @Html.ActionLink("Inicio de sesion", "Login", "Login", new { area = "" }, new { @class = "navbar-brand" })</button>
+                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button"  role="tab" aria-selected="false"> @Html.ActionLink("Inicio de sesion", "Login", "Login", new { area = "" }, new { @class = "navbar-brand" })</button>
             </li>
         </ul>
     </div>
