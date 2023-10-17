@@ -4,54 +4,109 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div style="background-image:image(Imagenes/lobi.jpg)">
-    <!--Formulario Login-->
-    <div class="container-lg text-center ">
-        <img src="~/Imagenes/logo.png" alt="Logo Innovamed" width="300" height="100" />
-    </div><br />
 
-    <div class="container-fluid mt-5 ">
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header text-center">
-                        <h3>Iniciar Sesión</h3>
+<style>
+    .bg {
+        background-image: url(../../Imagenes/fondo.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+ 
+</style>
+
+<body class="bg "> 
+    <br />
+    <div class="container w-75 bg-transparent mt-5 rounded shadow">
+        <div class="row align-items-stretch ">
+
+            <div class="col bg-transparent d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded text-center">
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <img src="~/Imagenes/logo.png" alt="logo" width="100%" >
+
+            </div>
+            <!-- Logo y Bienvenida-->
+            <div class="col bg-transparent p-5 text-center rounded-end">
+                <div class="text-end">
+                    
+                </div>
+
+                <h2 class="fw-bold text-center pt-5 mb-5 py-5"> Bienvedios a Innovamed </h2>
+
+                <!-- LOGIN  -->
+                <!-- LOGIN  -->
+                <form action="">
+                    <div class="mb-4 text-left" >
+
+                        <div class="form-group">
+                            <label for="usertx">Usuario:</label>
+                            <input type="text" class="form-control" name="txtUser" id="txtUser" placeholder="Usuario" required>
+                        </div>
+
                     </div>
-                    <div class="card-body">
-                        <form action="#" method="post" style="text-align:center">
-                            <label for="username">Usuario</label>
-                            <div class="form-group" style="display:flex; text-align:center;">
-                                <i class='bx bx-user'></i>
-                                <input type="text" placeholder="Email or username" class="form-control" id="username" name="username" required>
+                    <div class="mb-4 text-left">
+                        <div class="form-group">
+                            <label for="txtPassword" class="form-label">Contraseña:</label>
+                            <input type="password" class="form-control" name="txtPassword" id="txtPassword" placeholder="********" required>
+                        </div>
 
-                            </div>
-                            <br />
-                            <label for="password">Contraseña</label>
-                            <div class="form-group" style="display:flex; text-align:center;">
-                                <i class='bx bxs-lock-alt'></i>
-                                <input type="password" placeholder="Password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="mb-4 text-left form-check">
+                        <input type="checkbox" name="content" class="form-check-input" id="">
+                        <label for="content" class="form-check-label">Mantenerme conecctado</label>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary" id="boton-dinamico">
+                            <span class="spinner-grow spinner-grow-sm"></span>
+                            Iniciar Seción
+                        </button>
+                    </div>
 
-                            </div>
-                            <br />
 
-                            <div class="form-check mb-3">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" name="remember"> Remember me
-                                </label>
-                            </div>
-                            <div class="container-fluid d-grid text-center bg-white">
+                    <!-- BOTON DIMANIC-->
 
-                                <button type="submit" class="btn btn-primary btn-block"><span class="spinner-grow spinner-grow-sm"></span>Ingresar</button>
-                            </div>
+                    <div class="my-3 text-center">
+                        <span>¿Notienes cuenta? <a href="#"> Registrate</a></span> <br>
+                        <samp><a href="#">Recuperara Password</a></samp>
+                    </div>
+                </form>
+                <!-- LOGIN CON REDES SOCIALES -->
 
-                        </form>
+
+                <div class="container  bg-transparent w-100 my-5">
+                    <div class="row text-center">
+                        <div class="col-12">Inciar Seción </div><br />
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-outline-primary w-100 my-1">
+                                <div class="row align-items-center">
+                                    <div class="col-2 d-none d-md-block">
+                                        <img src="img/facebook.png" width="32" alt="">
+                                    </div>
+                                    <div class="text-center col-12 col-md-10 ">
+                                        Facebook
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Oto Booton-->
+                        <div class="col">
+                            <button class="btn btn-outline-danger w-100 my-1">
+                                <div class="row align-items-center">
+                                    <div class="col-2 d-none d-md-block">
+                                        <img src="img/google.png" width="32" alt="">
+                                    </div>
+                                    <div class="col-12 col-md-10 text-center">
+                                        Google
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div><br /><br />
-
-
-
-  
+    <script src="js/bootstrap.bundle.min.js"></script> <br />
+</body>
