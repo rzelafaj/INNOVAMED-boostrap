@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+﻿@model  INNOVAMED.Models.Pacientes
+=======
 ﻿
+>>>>>>> 78f923256cdd3824e843059de2bd5a02c3b6d142
 
 @{
     ViewBag.Title = "Registro-";
@@ -35,120 +39,133 @@
     <!--cajas de texto-->
     <div >
         <br />
-        <form class="form-control container-lg" style="background: #0093B9;">
+        
+        
+        <form class="form-control container-lg" style="background: #0093B9" method="post" action="@Url.Action("CrearPaciente", "Registro")">
+            
             <!--campos para ingreso de nombres-->
             <div class="row">
-                <div class="col-lg-6">
-                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium">NOMBRE DEL PACIENTE</label>
-                    <input type="text" class="form-control" placeholder="Nombres*" name="nombres">
-                </div>
-                <div class="col-lg-6">
-                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium">APELLIDO DEL PACIENTE</label>
-                    <input type="text" class="form-control" placeholder="Apellidos*" name="apellidos">
+                <div class="col-12" style="display:flex">
+                    <div class="col-sm-6">
+                        <label  for="Nombre" style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium">NOMBRE DEL PACIENTE</label>
+                        <input id="Nombre" name="Nombre" type="text" class="form-control" placeholder="Nombres*">
+
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="Apellido" style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium">APELLIDO DEL PACIENTE</label>
+                        <input id="Apellido" type="text" class="form-control" placeholder="Apellidos*" name="Apellido">
+                    </div>
                 </div>
             </div>
             <br />
 
             <!--campo de ingreso de direccion-->
             <div class="row">
-                <div class="col-lg-10">
-                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">DIRECCION</label>
-                    <input type="text" class="form-control" placeholder="Direccion segun Dui*" name="direccion">
+                <div class="col-12" style="display:flex">
+                    <div class="col-lg-10">
+                        <label for="Direccion" style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">DIRECCION</label>
+                        <input type="text" id="Direccion" class="form-control" placeholder="Direccion segun Dui*" name="Direccion">
+                    </div>
                 </div>
             </div>
             <br />
 
             <!--campos de ingreso de correo y teleono-->
             <div class="row">
-                <div class="col-lg-6">
-                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">CORREO ELECTRONICO</label>
-                    <input type="text" class="form-control" placeholder="Correo electronico*" name="email">
-                </div>
-                <div class="col-lg-3">
-                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">TELEFONO</label>
-                    <input type="text" class="form-control" placeholder="Telefono*" name="telefono">
+                <div class="col-12" style="display:flex">
+                    <div class="col-lg-6">
+                        <label for="Email" style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">CORREO ELECTRONICO</label>
+                        <input id="Email" type="text" class="form-control" placeholder="Correo electronico*" name="Email">
+                    </div>
+                    <div class="col-lg-3">
+                        <label for="Telefono" style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">TELEFONO</label>
+                        <input id="Telefono" type="text" class="form-control" placeholder="Telefono*" name="Telefono">
+                    </div>
                 </div>
             </div>
             <br />
 
             <!--campos de ingreso de documento de identidad y fecha de nacimiento-->
             <div class="row">
-                <div class="col-lg-3">
-                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">DUI</label>
-                    <input type="text" class="form-control" placeholder="DUI*" name="dui">
-                </div>                
-                <div class="col-lg-3">
-                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">FECHA DE NACIMIENTO</label>
-                    <input type="date" class="form-control" placeholder="Fecha de nacimiento*" name="Fecha de nacimiento">
+                <div class="col-12" style="display:flex">
+                    <div class="col-lg-3">
+                        <label for="DUI" style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">DUI</label>
+                        <input id="DUI" type="text" class="form-control" placeholder="DUI*" name="DUI">
+                    </div>
+                    <div class="col-lg-3">
+                        <label for="FechaNacimiento" style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">FECHA DE NACIMIENTO</label>
+                        <input id="FechaNacimiento" type="date" value="1800-01-01" class="form-control" placeholder="Fecha de nacimiento*" name="FechaNacimiento">
+                    </div>
                 </div>
-                
             </div>
             <br />
 
             <!--campos de ingreso de correo y teleono-->
             <div class="row">
                 <div class="col-lg-4">
-                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">CONTRASEÑA</label>
-                    <input type="password" class="form-control" placeholder="Contraseña*" name="contraseña" onclick="viewPassword()">
+                    <label for="Password" style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">CONTRASEÑA</label>
+                    <input id="Password" type="password" class="form-control" placeholder="Contraseña*" name="Password">
                 </div>
-                <div class="col-lg-4">
-                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">CONFIRMACION DE CONTRASEÑA</label>
-                    <input type="password" class="form-control" placeholder="Confirmar su contraseña*" name="Confirmacion de contraseña">
-                </div>
+                @*<div class="col-lg-4">
+                <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">CONFIRMACION DE CONTRASEÑA</label>
+                <input type="password" class="form-control" placeholder="Confirmar su contraseña*" name="Ccontraseña">
+            </div>*@
             </div>
             <br />
 
             <!--en caso de emergencia llamar a -->
             <div class="row">
-                <div class="col-lg-6">
-                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">NOMBRE DE LA PERSONA RESPONSABLE</label>
-                    <input type="text" class="form-control" placeholder="En caso de emergencia llamar a*" name="nombres">
+                <div class="col-12" style="display:flex">
+                    <div class="col-lg-6">
+                        <label for="Responsable" style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">NOMBRE DE LA PERSONA RESPONSABLE</label>
+                        <input id="Responsable" type="text" class="form-control" placeholder="En caso de emergencia llamar a*" name="Responsable">
+                    </div>
+                    <div class="col-lg-3">
+                    <label for="TelefonoResponsable" style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">TELEFONO</label>
+                    <input id="TelefonoResponsable" type="text" class="form-control" placeholder="Telefono*" name="TelefonoResponsable" >
                 </div>
-                <div class="col-lg-3">
-                    <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium; text-align:left">TELEFONO</label>
-                    <input type="text" class="form-control" placeholder="Telefono*" name="apellidos">
                 </div>
             </div>
             <br />
 
             <!--CheckBox -->
-            <div class="row">
-                <div class="col text-white">
-                    <asp:Label runat="server" Text="Label" style="margin-left:10px">Sexo*</asp:Label>
-                    <input type="radio" class="form-check-input" style="margin-left:40px" id="femenino" name="optradio" value="Femenino">
-                    <label class="form-check-label" for="radio2">Femenino</label>
-                    <input type="radio" class="form-check-input" style="margin-left:40px" id="masculino" name="optradio" value="Masculino">
-                    <label class="form-check-label" for="radio2">Masculino</label>
-                </div>
+            @*<div class="row">
+            <div class="col text-white">
+                <asp:Label runat="server" Text="Label" style="margin-left:10px">Sexo*</asp:Label>
+                <input type="radio" class="form-check-input" style="margin-left:40px" id="femenino" name="optradio" value="Femenino">
+                <label class="form-check-label" for="radio2">Femenino</label>
+                <input type="radio" class="form-check-input" style="margin-left:40px" id="masculino" name="optradio" value="Masculino">
+                <label class="form-check-label" for="radio2">Masculino</label>
             </div>
-            <hr />
-            <div class="row text-white">
-                <div class="col">
-                    <asp:Label runat="server" Text="Label" style="margin-left:10px">¿Consumes medicamentos de tipo recurrentes?</asp:Label>
-                    <input type="radio" class="form-check-input" style="margin-left:40px" id="medSi" name="optradio1" value="true">
-                    <label class="form-check-label" for="radio2">SI</label>
-                    <input type="radio" class="form-check-input" style="margin-left:40px" id="medNo" name="optradio1" value="false">
-                    <label class="form-check-label" for="radio2">NO</label>
-                </div>
+        </div>
+        <hr />
+        <div class="row text-white">
+            <div class="col">
+                <asp:Label runat="server" Text="Label" style="margin-left:10px">¿Consumes medicamentos de tipo recurrentes?</asp:Label>
+                <input type="radio" class="form-check-input" style="margin-left:40px" id="medSi" name="optradio1" value="true">
+                <label class="form-check-label" for="radio2">SI</label>
+                <input type="radio" class="form-check-input" style="margin-left:40px" id="medNo" name="optradio1" value="false">
+                <label class="form-check-label" for="radio2">NO</label>
             </div>
-            <hr />
-            <div class="row text-white">
-                <div class="col">
-                    <asp:Label runat="server" Text="Label" style="margin-left:10px">¿Padeces alguna enfermedad cronica?</asp:Label>
-                    <input type="radio" class="form-check-input" style="margin-left:105px" id="enfSi" name="optradio2" value="true">
-                    <label class="form-check-label" for="radio2">SI</label>
-                    <input type="radio" class="form-check-input" style="margin-left:40px" id="enfNo" name="optradio2" value="false">
-                    <label class="form-check-label" for="radio2">NO</label>
-                </div>
+        </div>*@
+            @*<hr />
+        <div class="row text-white">
+            <div class="col">
+                <asp:Label runat="server" Text="Label" style="margin-left:10px">¿Padeces alguna enfermedad cronica?</asp:Label>
+                <input type="radio" class="form-check-input" style="margin-left:105px" id="enfSi" name="optradio2" value="true">
+                <label class="form-check-label" for="radio2">SI</label>
+                <input type="radio" class="form-check-input" style="margin-left:40px" id="enfNo" name="optradio2" value="false">
+                <label class="form-check-label" for="radio2">NO</label>
+            </div>*@
 
-            </div>
+            <!--</div>-->
             <br /><br />
             <!--Botones de guardar y limpiar-->
             <div class="row">
-                <div class="col">
-                    <button type="submit" class="btn btn-primary">Limpiar informacion</button>
+                <div class="col-2">
+                    <button type="reset" class="btn btn-primary">Limpiar informacion</button>
                 </div>
-                <div class="col">
+                <div class="col-2">
                     <button type="submit" class="btn btn-primary">Guardar datos</button>
                 </div>
             </div>

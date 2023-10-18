@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
 using System.Web;
@@ -9,7 +10,9 @@ namespace INNOVAMED.Models
     //variables a utilizar
     public class Pacientes
     {
+        
        public int IdPaciente { get; set; }
+        
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string DUI { get; set; }
@@ -19,6 +22,7 @@ namespace INNOVAMED.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public string Responsable { get; set; }
+        public string TelefonoResponsable { get; set; }
         public  bool Estado { get; set; }
     }
 }
