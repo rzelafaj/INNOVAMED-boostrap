@@ -25,7 +25,7 @@
 
 </div>
 
-<!--==================================Informacion de medicos====================================-->
+<!--==================================Informacion de médicos====================================-->
 <section class="pb-5">
     <div class="row">
         <!--================Tarjeta 1====================-->
@@ -65,7 +65,7 @@
                                 <p><img class=" img-fluid" src="~/Imagenes/doctorgeneral2.jpg" alt="card image"></p>
                                 <h4 class="texto">Sunlimetech 2</h4>
                                 <p class="card-text">This is basic card with image on top, title, description and button.</p>
-                                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                @*<a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>*@
                             </div>
                         </div>
                     </div>
@@ -113,38 +113,63 @@
         </div>
     </div>
 </section>
-<!--============================================================================================================================================================-->
+<!--=======================================Ventana modal==========================================-->
 <!-- Modal -->
 <div class="modal fade" id="myModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header bg-black text-white">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="exampleModalLabel">Agendar cita</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <!--Contenido del formulario de agendar cita-->
-            <div class="modal-body bg-primary">
+            <div class="modal-body bg-secondary" style="text-align: center">
                 <label style="font-family: Arial; color: white;">
-                    <b>Bienvenido a la ventana de agregar cita</b>
-                    <!--campos para ingreso de nombres-->
-                    <form>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium">NOMBRE DEL PACIENTE</label>
-                                <input type="text" class="form-control" placeholder="Nombres*" name="nombres">
-                            </div>
-                            <div class="col-lg-6">
-                                <label style="color:white; font-family:'Times New Roman', Times, serif; font-size:medium">APELLIDO DEL PACIENTE</label>
-                                <input type="text" class="form-control" placeholder="Apellidos*" name="apellidos">
-                            </div>
-                        </div>
-                    </form>
-                    <br />
+                    <b>Bienvenido/a</b>
+                    <br>
+                    <b>Seleccione entre las especialidades disponibles y agende una cita</b>
+                    <form><br></form>
+                    <!--Seleccionar especialidad-->
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupSelect01" style="background-color: dodgerblue; color: white; font-weight: bold">Seleccione una especialidad</label>
+                        <select class="form-select" id="inputGroupSelect01">
+                            <option selected>Elegir...</option>
+                            <option value="1">Cardiología</option>
+                            <option value="2">Pediatría</option>
+                        </select>
+                    </div>
+                    <b>Seleccione el motivo de su consulta</b>
+                    <br>
+                    <!--Seleccionar motivo de consulta-->
+                    <div class="inline-buttons">
+                        <button type="button" class="btn btn-primary">Primera consulta</button>
+                        <button type="button" class="btn btn-primary">Seguimiento</button>
+                    </div>
+                    <br>
+                    <!--Seleccionar médico disponible-->
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupSelect01" style="background-color: dodgerblue; color: white; font-weight: bold">Selecciona un médico</label>
+                        <select class="form-select" id="inputGroupSelect01">
+                            <option selected>Elegir...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+
+                        </select>
+                    </div>
+                    <!--Define la hora y fecha de atención -->
+                    <b>Defina la hora y fecha de atención</b>
+                    <br>
+                    <!--Date picker-->
+                    <div class="col-lg-8 text-center">
+                        <label style="color:white; font-family:Arial; font-size:medium; text-align:center">Seleccione una fecha</label>
+                        <input type="date" class="form-control" name="Fecha de cita">
+                    </div>
                 </label>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-outline-primary">Crear cita</button>
             </div>
         </div>
     </div>

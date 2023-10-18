@@ -111,4 +111,11 @@ button {
 .card-title{
     color: #0093B9;
 }
+
+/*Alinear botones*/
+.inline-buttons{
+    display: inline-block;
+    margin: 0 10px;
+    text-align: center;
+}
     
