@@ -57,10 +57,11 @@ namespace INNOVAMED.Controllers
                     cmd.ExecuteNonQuery();
                     con.Close();
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Login", "Login");
                 }
                 catch (Exception ex)
                 {
+
                     return View("RegistrarPaciente");
                     throw ex;
                 }
