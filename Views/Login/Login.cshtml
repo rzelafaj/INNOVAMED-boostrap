@@ -31,23 +31,30 @@
 
                 </div>
 
-                <h2 class="fw-bold text-center pt-5 mb-5 py-5"> Bienvedios a Innovamed </h2>
+                <h2 class="fw-bold text-center pt-5 mb-5 py-5"
+                    
+                    style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                        font-size:xx-large;
+                    color:black"> Bienvedios a Innovamed </h2>
 
-                <!-- LOGIN  -->
+        
+
                 <!-- LOGIN  -->
                 <form class="form-control" method="post" action="@Url.Action("AccederSistema","Login")">
-                    <div class="mb-4 text-left">
+                    <div class="mb-4 text-left ">
+                        <label for="usertx">Email:</label> <br />
+                        <div class="input-group">
 
-                        <div class="form-group">
-                            <label for="usertx">Usuario:</label>
-                            <input type="text" class="form-control" name="Email" id="Email" placeholder="Usuario" required>
+                            <span class="input-group-text">📧</span>
+                            <input type="text" class="form-control" name="Email" id="Email" placeholder="Ej.example@gmail.com" required>
                         </div>
 
                     </div>
                     <div class="mb-4 text-left">
-                        <div class="form-group">
-                            <label for="txtPassword" class="form-label">Contraseña:</label>
-                            <input type="password" class="form-control" name="Password" id="Password" placeholder="********" required>
+                        <label for="txtPassword" class="form-label">Password:</label><br />
+                        <div class="input-group">
+                            <span class="input-group-text">🔑</span>
+                            <input type="password" class="form-control" name="Password" id="Password" placeholder="Ej. ******" required>
                         </div>
 
                     </div>
@@ -67,15 +74,15 @@
 
                     <div class="my-3 text-center">
                         <span>¿Notienes cuenta? <a href="#"> Registrate</a></span> <br>
-                        <samp><a href="#">Recuperara Password</a></samp>
+                        <samp><a href="#">Recuperar Password</a></samp>
                     </div>
                 </form>
                 <!-- LOGIN CON REDES SOCIALES -->
 
 
                 <div class="container  bg-transparent w-100 my-5">
-                    <div class="row text-center">
-                        <div class="col-12">Inciar Seción </div><br />
+                    <div class="row text-center text-center text-bg-primary">
+                        <div class="col-12" style="font-size:x-large;">Inciar Seción </div><br />
                     </div>
                     <div class="row">
                         <div class="col">
@@ -108,5 +115,8 @@
             </div>
         </div>
     </div>
+
+
+
     <script src="js/bootstrap.bundle.min.js"></script> <br />
 </body>
