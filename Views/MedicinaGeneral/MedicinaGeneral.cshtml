@@ -134,8 +134,9 @@
                         <label class="input-group-text" for="inputGroupSelect01" style="background-color: dodgerblue; color: white; font-weight: bold">Seleccione una especialidad</label>
                         <select class="form-select" id="inputGroupSelect01">
                             <option selected>Elegir...</option>
-                            <option value="1">Cardiología</option>
+                            <option value="1">Medicina general</option>
                             <option value="2">Pediatría</option>
+                            <option value="3">Cardiología</option>
                         </select>
                     </div>
                     <b>Seleccione el motivo de su consulta</b>
@@ -146,6 +147,7 @@
                         <button type="button" class="btn btn-primary">Seguimiento</button>
                     </div>
                     <br>
+                    <form><br></form>
                     <!--Seleccionar médico disponible-->
                     <div class="input-group mb-3">
                         <label class="input-group-text" for="inputGroupSelect01" style="background-color: dodgerblue; color: white; font-weight: bold">Selecciona un médico</label>
@@ -161,9 +163,24 @@
                     <b>Defina la hora y fecha de atención</b>
                     <br>
                     <!--Date picker-->
-                    <div class="col-lg-8 text-center">
-                        <label style="color:white; font-family:Arial; font-size:medium; text-align:center">Seleccione una fecha</label>
-                        <input type="date" class="form-control" name="Fecha de cita">
+                    <div>
+                        <div class="col-sm-12">
+                            <label style="color:white; font-family:Arial; font-size:medium; text-align:center">Seleccione una fecha</label>
+                            <input type="date" class="form-control" name="Fecha de cita">
+                        </div>
+                    </div>
+                    
+                    <!--Dropdown para horarios-->
+                    <div class="dropdown">
+                        <label style="color:white; font-family:Arial; font-size:medium; text-align:center">Seleccione un horario de atención</label> <br>
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Horarios disponibles
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
                     </div>
                 </label>
             </div>
