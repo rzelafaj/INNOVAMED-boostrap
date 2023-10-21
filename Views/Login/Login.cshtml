@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Login-";
     Layout = "~/Views/Shared/_Layout.cshtml";
+   
 }
 
 
@@ -21,9 +22,8 @@
         <div class="row align-items-stretch ">
 
             <div class="col bg-transparent d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded text-center">
-                <br /><br /><br /><br /><br /><br /><br /><br /><br />
-                <br /><br /><br /><br /><br /><br />
-                <img src="~/Imagenes/logo.png" alt="logo" width="350">
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <img src="~/Imagenes/logo.png" alt="logo" width="100%">
 
             </div>
             <!-- Logo y Bienvenida-->
@@ -41,23 +41,21 @@
         
 
                 <!-- LOGIN  -->
-                <form class="form-control was-validated" method="post" action="@Url.Action("AccederSistema","Login")">
+                <form class="form-control" method="post" action="@Url.Action("AccederSistema","Login")">
                     <div class="mb-4 text-left ">
                         <label for="usertx">Email:</label> <br />
                         <div class="input-group">
 
-                            <span class="input-group-text"><img src="~/Imagenes/gmail1.png" width="25" alt="Email"></span>
+                            <span class="input-group-text">📧</span>
                             <input type="text" class="form-control" name="Email" id="Email" placeholder="Ej.example@gmail.com" required>
-                           
                         </div>
 
                     </div>
                     <div class="mb-4 text-left">
                         <label for="txtPassword" class="form-label">Password:</label><br />
                         <div class="input-group">
-                            <span class="input-group-text"><img src="~/Imagenes/candado.png" width="25" alt="Password"></span>
+                            <span class="input-group-text">🔑</span>
                             <input type="password" class="form-control" name="Password" id="Password" placeholder="Ej. ******" required>
-                           
                         </div>
 
                     </div>
@@ -76,15 +74,15 @@
                     <!-- BOTON DIMANIC-->
 
                     <div class="my-3 text-center">
-                        <span>¿Notienes cuenta? <a href=""> Registrate</a></span> <br>
+                        <span>¿Notienes cuenta? <a href="#"> Registrate</a></span> <br>
                         <samp><a href="#">Recuperar Password</a></samp>
                     </div>
                 </form>
                 <!-- LOGIN CON REDES SOCIALES -->
 
 
-                <div class="container-lg bg-transparent w-100 my-5">
-                    <div class="row text-center text-center text-bg-success">
+                <div class="container  bg-transparent w-100 my-5">
+                    <div class="row text-center text-center text-bg-primary">
                         <div class="col-12" style="font-size:x-large;">Inciar Seción </div><br />
                     </div>
                     <div class="row">
@@ -92,7 +90,7 @@
                             <button class="btn btn-outline-primary w-100 my-1">
                                 <div class="row align-items-center">
                                     <div class="col-2 d-none d-md-block">
-                                        <img src="img/facebook.png"class="float-start"  width="35" alt="">
+                                        <img src="img/facebook.png" width="32" alt="">
                                     </div>
                                     <div class="text-center col-12 col-md-10 ">
                                         Facebook
@@ -105,7 +103,7 @@
                             <button class="btn btn-outline-danger w-100 my-1">
                                 <div class="row align-items-center">
                                     <div class="col-2 d-none d-md-block">
-                                        <img src="img/google.png" class="float-start" width="35" alt="">
+                                        <img src="img/google.png" width="32" alt="">
                                     </div>
                                     <div class="col-12 col-md-10 text-center">
                                         Google

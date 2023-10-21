@@ -9,6 +9,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI.WebControls;
+using System.Security.Principal;
 
 
 namespace INNOVAMED.Controllers
@@ -17,10 +18,15 @@ namespace INNOVAMED.Controllers
     {
         // GET: Login
         public ActionResult Login()
-        {
-            return View();
+        { 
+           return View();
         }
 
+        public ActionResult CerrarSecion()
+        {
+            Session["UsuarioLogueado"] = false;
+            return RedirectToAction("Index", "Home"); 
+        }
         //utilizacion de metodo http post para llamado de medo y interacion con la base de datos 
         [HttpPost]
         public ActionResult AccederSistema(Pacientes P)
@@ -36,7 +42,7 @@ namespace INNOVAMED.Controllers
                     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
 
                     //objeto de tipo command type para interactuar con sql
-                    SqlCommand cmd = new SqlCommand("Select Email, Password from Pacientes " + "where Email = @Email and Password = @Password", con);
+                    SqlCommand cmd = new SqlCommand("Select IdPaciente, Email, Password from Pacientes where Email = @Email and Password = @Password", con);
                     cmd.CommandType = CommandType.Text;
                     
                     cmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = P.Email;
@@ -51,9 +57,11 @@ namespace INNOVAMED.Controllers
                         // Pasamos los datos obtenidos en el query
                         P.Email = Lector["Email"].ToString();
                         P.Password = Lector["Password"].ToString();
-
+                        //guardamos la sesion en un variable de session
+                        Session["UsuarioLogueado"] = true;
+                        Session["IdPaciente"] = Lector["IdPaciente"];
                         con.Close();
-                        return RedirectToAction("Index", "Home");
+                        
                     }
                     else
                     {
@@ -69,7 +77,7 @@ namespace INNOVAMED.Controllers
                     throw ex;
                 }
             }
-
+            Response.Write("<script>alert('Bienvenido secion iniciada')</script>");
             return RedirectToAction("Index", "Home");
         }
     }

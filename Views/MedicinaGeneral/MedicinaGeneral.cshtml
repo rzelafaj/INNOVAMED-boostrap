@@ -1,4 +1,6 @@
-﻿
+﻿@model  INNOVAMED.Models.Citas
+
+
 @{
     ViewBag.Title = "Medicina General";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -44,10 +46,20 @@
                     <div class="backside">
                         <div class="card">
                             <div class="card-body text-center mt-4">
-                                <h4 class="card-title">Sunlimetech 2</h4>
-                                <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                <h4 class="card-title">Dra. Lucia Hernández</h4>
+                                <p class="card-text">Es una médica altamente calificada y dedicada, con una amplia experiencia en diversas disciplinas médicas. Su pasión por la atención de pacientes se refleja en su compromiso con brindar atención de alta calidad y cuidado compasivo.</p>
                                 <div>
-                                    <button type="button" class="btn-lg" data-bs-toggle="modal" data-bs-target="#myModal">Agendar cita</button>
+                                    @* verificamos si la session a sio iniciada correctamente *@
+                                    @if (Session["UsuarioLogueado"] != null && (bool)Session["UsuarioLogueado"])
+                                    {
+                                        <button type="button" class="btn-lg" data-bs-toggle="modal" data-bs-target="#myModal">Agendar cita</button>
+                                    }
+                                    else
+                                    {
+                                        <a id="login" href="@Url.Action("Login", "Login")" class="btn-lg" style="color:white" data-toggle="tooltip" data-placement="top" title="Haz clic para iniciar sesión y agendar una cita">Iniciar sesión</a>
+
+                                    }
+
                                 </div>
                             </div>
                         </div>
@@ -63,8 +75,7 @@
                         <div class="card">
                             <div class="card-body text-center">
                                 <p><img class=" img-fluid" src="~/Imagenes/doctorgeneral2.jpg" alt="card image"></p>
-                                <h4 class="texto">Sunlimetech 2</h4>
-                                <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                                <h4 class="texto">Dra. Ana Platero</h4>
                                 @*<a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>*@
                             </div>
                         </div>
@@ -72,10 +83,19 @@
                     <div class="backside">
                         <div class="card">
                             <div class="card-body text-center mt-4">
-                                <h4 class="card-title">Sunlimetech 2</h4>
-                                <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                <h4 class="card-title">Dra. Ana Platero</h4>
+                                <p class="card-text">La Dra. Ana Platero es una médico general altamente comprometida con la atención integral de la salud de sus pacientes. Con una amplia experiencia en medicina, se dedica a brindar cuidados médicos comprensivos y personalizados</p>
                                 <div>
-                                    <button type="button" class="btn-lg" data-bs-toggle="modal" data-bs-target="#myModal">Agendar cita</button>
+                                    @* verificamos si la session a sio iniciada correctamente *@
+                                    @if (Session["UsuarioLogueado"] != null && (bool)Session["UsuarioLogueado"])
+                                    {
+                                        <button type="button" class="btn-lg" data-bs-toggle="modal" data-bs-target="#myModal">Agendar cita</button>
+                                    }
+                                    else
+                                    {
+                                        <a id="login" href="@Url.Action("Login", "Login")" class="btn-lg" data-toggle="tooltip" style="color:white" data-placement="top" title="Haz clic para iniciar sesión y agendar una cita">Iniciar sesión</a>
+
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -91,8 +111,8 @@
                         <div class="card">
                             <div class="card-body text-center">
                                 <p><img class=" img-fluid" src="~/Imagenes/doctorgeneral3.jpg" alt="card image"></p>
-                                <h4 class="texto">Sunlimetech 2</h4>
-                                <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                                <h4 class="texto">Dr. Jose Herrera</h4>
+                                
                                 @*<a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>*@
                             </div>
                         </div>
@@ -100,10 +120,19 @@
                     <div class="backside">
                         <div class="card">
                             <div class="card-body text-center mt-4">
-                                <h4 class="card-title">Sunlimetech 2</h4>
-                                <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                <h4 class="card-title">Dr. José Herrera</h4>
+                                <p class="card-text">Es un médico general altamente calificado y comprometido con la atención médica de calidad. Con una amplia experiencia en el campo de la medicina</p>
                                 <div>
-                                    <button type="button" class="btn-lg" data-bs-toggle="modal" data-bs-target="#myModal">Agendar cita</button>
+                                    @* verificamos si la session a sio iniciada correctamente *@
+                                    @if (Session["UsuarioLogueado"] != null && (bool)Session["UsuarioLogueado"])
+                                    {
+                                        <button type="button" class="btn-lg" data-bs-toggle="modal" data-bs-target="#myModal">Agendar cita</button>
+                                    }
+                                    else
+                                    {
+                                        <a id="login" href="@Url.Action("Login", "Login")" class="btn-lg" data-toggle="tooltip" data-placement="top" title="Haz clic para iniciar sesión y agendar una cita" style="color:white">Iniciar sesión</a>
+
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -115,6 +144,7 @@
 </section>
 <!--=======================================Ventana modal==========================================-->
 <!-- Modal -->
+
 <div class="modal fade" id="myModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -124,39 +154,49 @@
             </div>
             <!--Contenido del formulario de agendar cita-->
             <div class="modal-body bg-secondary" style="text-align: center">
-                <label style="font-family: Arial; color: white;">
+                <div style="text-align: center">
+                    <label style="font-family: Arial; color: white;" />
                     <b>Bienvenido/a</b>
                     <br>
                     <b>Seleccione entre las especialidades disponibles y agende una cita</b>
-                    <form><br></form>
+                </div>
+                <form method="post" action="@Url.Action("CrearCita","MedicinaGeneral")">
                     <!--Seleccionar especialidad-->
+                    @*<div class="input-group mb-3">
+                        <label class="input-group-text" for="IdEspecialidad" style="background-color: dodgerblue; color: white; font-weight: bold">Nombre del paciente</label>
+                        <input id="Nombre" name="Nombre" type="text" class="form-control" placeholder="Nombres*">
+                    </div>*@
                     <div class="input-group mb-3">
-                        <label class="input-group-text" for="inputGroupSelect01" style="background-color: dodgerblue; color: white; font-weight: bold">Seleccione una especialidad</label>
-                        <select class="form-select" id="inputGroupSelect01">
+                        <label class="input-group-text" for="IdEspecialidad" style="background-color: dodgerblue; color: white; font-weight: bold">Seleccione una especialidad</label>
+                        <select class="form-select" id="IdEspecialidad" name="IdEspecialidad">
                             <option selected>Elegir...</option>
-                            <option value="1">Medicina general</option>
-                            <option value="2">Pediatría</option>
-                            <option value="3">Cardiología</option>
+                            @* extraemos los adtos de la base de datos para mostrar  *@
+                            @foreach (var list2 in ViewBag.Especialidades)
+                            {
+                                <option value="@list2.Value">@list2.Text</option>
+                            }
                         </select>
                     </div>
+
                     <b>Seleccione el motivo de su consulta</b>
                     <br>
                     <!--Seleccionar motivo de consulta-->
-                    <div class="inline-buttons">
-                        <button type="button" class="btn btn-primary">Primera consulta</button>
-                        <button type="button" class="btn btn-primary">Seguimiento</button>
-                    </div>
+                    @*<div class="inline-buttons">
+                            <button type="button" class="btn btn-primary">Primera consulta</button>
+                            <button type="button" class="btn btn-primary">Seguimiento</button>
+                        </div>*@
                     <br>
-                    <form><br></form>
+
                     <!--Seleccionar médico disponible-->
                     <div class="input-group mb-3">
-                        <label class="input-group-text" for="inputGroupSelect01" style="background-color: dodgerblue; color: white; font-weight: bold">Selecciona un médico</label>
-                        <select class="form-select" id="inputGroupSelect01">
+                        <label class="input-group-text" for="IdMedico" style="background-color: dodgerblue; color: white; font-weight: bold">Selecciona un médico</label>
+                        <select class="form-select" id="IdMedico" name="IdMedico">
                             <option selected>Elegir...</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-
+                            @* extraemos los adtos de la base de datos para mostrar  *@
+                            @foreach (var list in ViewBag.Medicos)
+                            {
+                                <option value="@list.Value">@list.Text</option>
+                            }
                         </select>
                     </div>
                     <!--Define la hora y fecha de atención -->
@@ -166,36 +206,55 @@
                     <div>
                         <div class="col-sm-12">
                             <label style="color:white; font-family:Arial; font-size:medium; text-align:center">Seleccione una fecha</label>
-                            <input type="date" class="form-control" name="Fecha de cita">
+                            <input type="date" value="2023-01-01" class="form-control" name="Fecha">
                         </div>
                     </div>
-                    
+
                     <!--Dropdown para horarios-->
                     <div class="dropdown">
                         <label style="color:white; font-family:Arial; font-size:medium; text-align:center">Seleccione un horario de atención</label> <br>
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Horarios disponibles
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                        <label class="input-group-text" for="Hora" style="background-color: dodgerblue; color: white; font-weight: bold">Selecciona un médico</label>
+                        <select class="form-select" id="Hora" name="Hora">
+                            <option selected>Elegir...</option>
+                            @* extraemos los adtos de la base de datos para mostrar  *@
+                            @foreach (var list3 in ViewBag.Horarios)
+                            {
+                                <option value="@list3.Value">@list3.Text</option>
+                            }
+                        </select>
                     </div>
-                </label>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-outline-primary">Crear cita</button>
+                    </div>
+                </form>
+
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-outline-primary">Crear cita</button>
-            </div>
+
         </div>
     </div>
 </div>
 <script>
-    var myModal = document.getElementById('myModal')
-    var myInput = document.getElementById('myInput')
+    $(document).ready(function () {
+        var myModal = $('#myModal');
+        var btnAgendarCita = $('#btnAgendarCita');
 
-    myModal.addEventListener('shown.bs.modal', function () {
-        myInput.focus()
-    })
+        btnAgendarCita.click(function () {
+            myModal.modal('show');
+        });
+
+        myModal.on('hidden.bs.modal', function () {
+        });
+    });
+
+    $(document).ready(function () {
+        var login =$('#login')
+        login.Select(function () {
+            login = $('[data-toggle="tooltip"]').tooltip();;
+        });
+        
+    });
 </script>
+
+
+

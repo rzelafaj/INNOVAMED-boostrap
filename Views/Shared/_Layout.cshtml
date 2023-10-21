@@ -13,7 +13,7 @@
     <script src="~/Scripts/bootstrap_4.1.1_js_bootstrap.min.js"></script>
     <script src="~/Scripts/jquery_3.2.1_jquery.min.js"></script>
     <link href="~/Content/bootstrap_4.1.1_css_bootstrap.min.css" rel="stylesheet" />
-
+   
 </head>
 <body style="padding:0">
     <div>
@@ -37,8 +37,14 @@
                 <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">@Html.ActionLink("Registrarse", "RegistrarPaciente", "Registro", new { area = "" }, new { @class = "navbar-brand" })</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button"  role="tab" aria-selected="false"> @Html.ActionLink("Inicio de sesion", "Login", "Login", new { area = "" }, new { @class = "navbar-brand" })</button>
+                <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false"> @Html.ActionLink("Inicio de sesion", "Login", "Login", new { area = "" }, new { @class = "navbar-brand" })</button>
             </li>
+            @if (Session["UsuarioLogueado"] != null && (bool)Session["UsuarioLogueado"])
+            {
+                <li class="nav-item" role="presentation">
+                    <a id="login" href="@Url.Action("CerrarSecion", "Login")" class="nav-link rounded-5" type="button" style="width:70px"><b>Cerrar Session</b></a>
+                            </li>
+            }
         </ul>
     </div>
     <div>
