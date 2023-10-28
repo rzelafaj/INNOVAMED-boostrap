@@ -98,10 +98,6 @@ namespace INNOVAMED.Controllers
     [HttpPost]
         public ActionResult CrearCita(Citas c)
         {
-            
-
-            
-
             if (ModelState.IsValid)
             {
                 try
