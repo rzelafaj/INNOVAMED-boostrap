@@ -1,4 +1,4 @@
-﻿@model  INNOVAMED.Models.MedicinaGeneral
+﻿@model  INNOVAMED.Models.Citas
 
 
 @{
@@ -38,7 +38,7 @@
                         <div class="card">
                             <div class="card-body text-center text-black">
                                 <p><img class=" img-fluid" src="~/Imagenes/doctorgeneral1.jpg" alt="card image"></p>
-                                <h4 class="texto">@INNOVAMED.Models.MedicinaGeneral.LstMedicos[0].Nombre @INNOVAMED.Models.MedicinaGeneral.LstMedicos[0].Apellido</h4>
+                                <h4 class="texto">Dra. Lucia Hernández</h4>
                                 @*<a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>*@
                             </div>
                         </div>
@@ -48,12 +48,10 @@
                             <div class="card-body text-center mt-4">
                                 <h4 class="card-title">Dra. Lucia Hernández</h4>
                                 <p class="card-text">Es una médica altamente calificada y dedicada, con una amplia experiencia en diversas disciplinas médicas. Su pasión por la atención de pacientes se refleja en su compromiso con brindar atención de alta calidad y cuidado compasivo.</p>
-                                <div> 
+                                <div>
                                     @* verificamos si la session a sio iniciada correctamente *@
                                     @if (Session["UsuarioLogueado"] != null && (bool)Session["UsuarioLogueado"])
                                     {
-                                        INNOVAMED.Models.MedicinaGeneral.IdMedicoSeleccionado = INNOVAMED.Models.MedicinaGeneral.LstMedicos[0].IdMedico; 
-                                        INNOVAMED.Models.MedicinaGeneral.IdEspecialidadSeleccionada = INNOVAMED.Models.MedicinaGeneral.LstMedicos[0].IdEspecialidad; 
                                         <button type="button" class="btn-lg" data-bs-toggle="modal" data-bs-target="#myModal">Agendar cita</button>
                                     }
                                     else
@@ -164,16 +162,16 @@
                 </div>
                 <form method="post" action="@Url.Action("CrearCita","MedicinaGeneral")">
                     <!--Seleccionar especialidad-->
-                    @*<div class="input-group mb-3">
-                        <label class="input-group-text" for="IdEspecialidad" style="background-color: dodgerblue; color: white; font-weight: bold">Nombre del paciente</label>
-                        <input id="Nombre" name="Nombre" type="text" class="form-control" placeholder="Nombres*">
-                    </div>*@
+                    
                     <div class="input-group mb-3">
                         <label class="input-group-text" for="IdEspecialidad" style="background-color: dodgerblue; color: white; font-weight: bold">Seleccione una especialidad</label>
                         <select class="form-select" id="IdEspecialidad" name="IdEspecialidad">
-                            
+                            <option selected>Elegir...</option>
                             @* extraemos los adtos de la base de datos para mostrar  *@
-                                <option value="@INNOVAMED.Models.MedicinaGeneral.IdEspecialidadSeleccionada">Medicina general</option>                            
+                            @foreach (var list2 in ViewBag.Especialidades)
+                            {
+                                <option value="@list2.Value">@list2.Text</option>
+                            }
                         </select>
                     </div>
 
@@ -190,13 +188,12 @@
                     <div class="input-group mb-3">
                         <label class="input-group-text" for="IdMedico" style="background-color: dodgerblue; color: white; font-weight: bold">Selecciona un médico</label>
                         <select class="form-select" id="IdMedico" name="IdMedico">
-                            <option value="@INNOVAMED.Models.MedicinaGeneral.IdMedicoSeleccionado">       
-                                @if (@INNOVAMED.Models.MedicinaGeneral.IdMedicoSeleccionado != 0)
-                                {
-                                    string Nombre = INNOVAMED.Models.MedicinaGeneral.LstMedicos[INNOVAMED.Models.MedicinaGeneral.IdMedicoSeleccionado - 1].Nombre + " " + INNOVAMED.Models.MedicinaGeneral.LstMedicos[INNOVAMED.Models.MedicinaGeneral.IdMedicoSeleccionado - 1].Apellido;
-                                    @Nombre
-                                }
-                            </option>
+                            <option selected>Elegir...</option>
+                            @* extraemos los adtos de la base de datos para mostrar  *@
+                            @foreach (var list in ViewBag.Medicos)
+                            {
+                                <option value="@list.Value">@list.Text</option>
+                            }
                         </select>
                     </div>
                     <!--Define la hora y fecha de atención -->
@@ -206,17 +203,17 @@
                     <div>
                         <div class="col-sm-12">
                             <label style="color:white; font-family:Arial; font-size:medium; text-align:center">Seleccione una fecha</label>
-                            <input type="date" value="@DateTime.Today" class="form-control" name="Fecha">
+                            <input type="date" value="2023-01-01" class="form-control" name="Fecha">
                         </div>
                     </div>
 
                     <!--Dropdown para horarios-->
                     <div class="dropdown">
                         <label style="color:white; font-family:Arial; font-size:medium; text-align:center">Seleccione un horario de atención</label> <br>
-                        <label class="input-group-text" for="Hora" style="background-color: dodgerblue; color: white; font-weight: bold">Selecciona un horario de atención</label>
+                        <label class="input-group-text" for="Hora" style="background-color: dodgerblue; color: white; font-weight: bold">Selecciona un médico</label>
                         <select class="form-select" id="Hora" name="Hora">
                             <option selected>Elegir...</option>
-                            @* extraemos los datos de la base de datos para mostrar  *@
+                            @* extraemos los adtos de la base de datos para mostrar  *@
                             @foreach (var list3 in ViewBag.Horarios)
                             {
                                 <option value="@list3.Value">@list3.Text</option>
