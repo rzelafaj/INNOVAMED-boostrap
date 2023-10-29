@@ -59,7 +59,6 @@ namespace INNOVAMED.Controllers
                         P.Password = Lector["Password"].ToString();
                         //guardamos la sesion en un variable de session
                         Session["UsuarioLogueado"] = true;
-                        //guardamos el Id del Paciente en una varible de Session
                         Session["IdPaciente"] = Lector["IdPaciente"];
                         con.Close();
                         
@@ -78,7 +77,7 @@ namespace INNOVAMED.Controllers
                     throw ex;
                 }
             }
-            Response.Write("<script>alert('Bienvenido sesion iniciada')</script>");
+            Response.Write("<script>alert('Bienvenido secion iniciada')</script>");
             return RedirectToAction("Index", "Home");
         }
     }
