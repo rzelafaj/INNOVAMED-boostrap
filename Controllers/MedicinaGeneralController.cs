@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using System.Web.UI.WebControls;
 using Microsoft.SqlServer.Server;
 using System.Drawing;
+using System.Web.Configuration;
 
 namespace INNOVAMED.Controllers
 {
@@ -27,22 +28,32 @@ namespace INNOVAMED.Controllers
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
 
             //realizamos la consulta a sql 
-            SqlCommand cmd = new SqlCommand("Select IdMedico,Nombre, Apellido from Medicos ", con);
+            SqlCommand cmd = new SqlCommand("Select IdMedico, Nombre, Apellido, IdEspecialidad, Email, Telefono from Medicos ", con);
 
             //abrimos conexion 
             con.Open();
             
             SqlDataReader rd= cmd.ExecuteReader();
             //recoremos la tabla y almacenamos la informacion en variables locales para agragarlas a la lista 
-            while (rd.Read())
-            { 
-                int IdMedico = Convert.ToInt32(rd["IdMedico"]);
-                string Nombre = rd["Nombre"].ToString();
-                string Apellido = rd["Apellido"].ToString();
 
-                list.Add(new SelectListItem { Value = IdMedico.ToString(), Text = Nombre +" "+ Apellido }) ;
-            }
-            ViewBag.Medicos = list;
+            
+
+            while (rd.Read())
+            {
+                //Creamos un objeto de la clase Medicos 
+                Medicos oMedicos = new Medicos();
+
+                oMedicos.IdMedico = Convert.ToInt32(rd["IdMedico"]);
+                oMedicos.Nombre = rd["Nombre"].ToString();
+                oMedicos.Apellido = rd["Apellido"].ToString();
+                oMedicos.IdEspecialidad = Convert.ToInt32(rd["IdEspecialidad"]);
+                oMedicos.Email = rd["Email"].ToString();
+                oMedicos.Telefono = rd["Telefono"].ToString();
+
+                Models.MedicinaGeneral.LstMedicos.Add(oMedicos);
+
+            }                        
+
             con.Close();
 
             // creamos una nueva lista para el drowdoplist de Especialidades 
@@ -60,19 +71,20 @@ namespace INNOVAMED.Controllers
             while (rd2.Read())
             {
                 int IdEspecialidad = Convert.ToInt32(rd2["IdEspecialidad"]);
-                string Nomb = rd2["Especialidad"].ToString();
+                string Especialidad = rd2["Especialidad"].ToString();
                 
 
-                list2.Add(new SelectListItem { Value = IdEspecialidad.ToString(), Text = Nomb});
+                list2.Add(new SelectListItem { Value = IdEspecialidad.ToString(), Text = Especialidad});
             }
             ViewBag.Especialidades = list2;
+            
             con.Close();
 
             // creamos una nueva lista para el drowdoplist de Especialidades 
             List<SelectListItem> list3 = new List<SelectListItem>();
 
             //hacemos la consulta a sql 
-            cmd = new SqlCommand("Select IdHorario, Horario from Horarios", con);
+            cmd = new SqlCommand("Select IdHorario, Horario from Horarios order by IdHorario", con);
 
             //abirmos la conexion
             con.Open();
@@ -86,7 +98,7 @@ namespace INNOVAMED.Controllers
                 string Nom = rd3["Horario"].ToString();
 
 
-                list3.Add(new SelectListItem { Value = IdHorario.ToString(), Text = Nom });
+                list3.Add(new SelectListItem { Value = Nom.ToString(), Text = Nom });
             }
             ViewBag.Horarios = list3;
             con.Close(); 
@@ -96,7 +108,7 @@ namespace INNOVAMED.Controllers
 
 
     [HttpPost]
-        public ActionResult CrearCita(Citas c)
+        public ActionResult CrearCita(MedicinaGeneral c)
         {
             if (ModelState.IsValid)
             {
@@ -106,8 +118,8 @@ namespace INNOVAMED.Controllers
                     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
                    
                     //objeto de tipo command type para interactuar con sql
-                    SqlCommand cmd = new SqlCommand("Insert into Citas (IdPaciente, IdMedico, Fecha, Hora, Estado, IdEspecialidad)" +
-                        " Values (@PIdPaciente, @PIdMedico, @PFecha, @PHora, @PEstado, @PIdEspecialidad)", con);
+                    SqlCommand cmd = new SqlCommand("Insert into Citas (IdPaciente, IdMedico, Fecha, Hora, Especialidad, Estado)" +
+                        " Values (@PIdPaciente, @PIdMedico, @PFecha, @PHora, @PIdEspecialidad, @PEstado)", con);
                     cmd.CommandType = CommandType.Text;
                     c.Estado = true;
                     int IdPaciente = (int)Session["IdPaciente"]; 
@@ -115,8 +127,9 @@ namespace INNOVAMED.Controllers
                     cmd.Parameters.Add("@PIdMedico", SqlDbType.Int).Value = c.IdMedico;
                     cmd.Parameters.Add("@PFecha", SqlDbType.Date).Value = c.Fecha;
                     cmd.Parameters.Add("@PHora", SqlDbType. VarChar).Value = c.Hora;
-                    cmd.Parameters.Add("@PEstado", SqlDbType.Bit).Value = c.Estado;
                     cmd.Parameters.Add("@PIdEspecialidad", SqlDbType.Int).Value = c.IdEspecialidad;
+                    cmd.Parameters.Add("@PEstado", SqlDbType.Bit).Value = c.Estado; 
+                    
                     //abrimos la conexion
                     con.Open();
                     cmd.ExecuteNonQuery();
