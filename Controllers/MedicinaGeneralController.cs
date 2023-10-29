@@ -135,15 +135,3 @@ namespace INNOVAMED.Controllers
         }
     }
 }
-//// instancia a la cadena de conexion
-//SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
-////verificamos si el paciente esta dentro de la base de datos 
-//SqlCommand cmd = new SqlCommand("select IdPaciente,Nombre from Pacientes where Nombre like'%'+ @PNombre +'%'", con);
-//cmd.Parameters.AddWithValue("@PNombre", P.Nombre);
-//            con.Open();
-
-//            SqlDataReader reader = cmd.ExecuteReader();
-//            if (reader.HasRows)
-//            {
-//                IdPaciente = Convert.ToInt32(reader["IdPaciente"]);
-//            }
