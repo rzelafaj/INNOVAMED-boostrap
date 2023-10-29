@@ -11,7 +11,8 @@ namespace INNOVAMED.Models
     public class Pacientes
     {
         
-        public int IdPaciente { get; set; }        
+       public int IdPaciente { get; set; }
+        
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string DUI { get; set; }
