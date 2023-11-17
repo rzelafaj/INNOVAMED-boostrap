@@ -191,6 +191,8 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap_4.1.1_js_bootstrap.min.js" />
     <Content Include="Scripts\jquery_3.2.1_jquery.min.js" />
+    <Content Include="videos\¿Como hacer una cita.mp4" />
+    <Content Include="videos\¿Cómo registrarse.mp4" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -203,7 +205,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="Models\MedicinaGeneral.cs" />
+    <Compile Include="Models\Medicos.cs" />
+=======
     <Compile Include="Models\Citas.cs" />
+>>>>>>> 5c1fc4a2da1ac5e2ad8100d5721f3e0b568aae17
     <Compile Include="Models\Pacientes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup1.cs" />
