@@ -2,13 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-<<<<<<< HEAD
-using System.Data.SqlClient;
-using System.Data;
-=======
 using System.Data;
 using System.Data.SqlClient;
->>>>>>> 5c1fc4a2da1ac5e2ad8100d5721f3e0b568aae17
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -17,13 +12,10 @@ namespace INNOVAMED.Controllers
 {
     public class EspecialidadesController : Controller
     {
+        // GET: Especialidades
         public ActionResult Cardiologia()
         {
-<<<<<<< HEAD
-
-=======
            
->>>>>>> 5c1fc4a2da1ac5e2ad8100d5721f3e0b568aae17
             return View();
         }
 
@@ -105,11 +97,7 @@ namespace INNOVAMED.Controllers
         }
 
         [HttpPost]
-<<<<<<< HEAD
-        public ActionResult CrearCita(MedicinaGeneral c)
-=======
         public ActionResult CrearCita(Citas c)
->>>>>>> 5c1fc4a2da1ac5e2ad8100d5721f3e0b568aae17
         {
             if (ModelState.IsValid)
             {
@@ -135,11 +123,7 @@ namespace INNOVAMED.Controllers
                     cmd.ExecuteNonQuery();
                     con.Close();
 
-<<<<<<< HEAD
-
-=======
                    
->>>>>>> 5c1fc4a2da1ac5e2ad8100d5721f3e0b568aae17
                 }
                 catch (Exception ex)
                 {
